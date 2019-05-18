@@ -26,17 +26,26 @@ public class NonUITaskFragment extends Fragment {
         myTask.execute(arguments);
     }
 
-
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        this.activity = activity;
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.activity = getActivity();
         if(myTask != null){
             myTask.onAttach(activity);
         }
         Log.d("XXXNonUITaskFragment", "1 - onAttach");
     }
 
+//    @Override
+//    public void onAttach(Activity activity) {
+//        super.onAttach(activity);
+//        this.activity = activity;
+//        if(myTask != null){
+//            myTask.onAttach(activity);
+//        }
+//        Log.d("XXXNonUITaskFragment", "1 - onAttach");
+//    }
+//
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
